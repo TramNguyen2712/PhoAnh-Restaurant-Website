@@ -1,0 +1,597 @@
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100w;
+    height: 100vh;
+    background: url(img/621c9068-5c0a-44e2-b0cf-66923fcbfc6b);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+header::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background: rgba(0,0,0,0.7);
+    
+}
+
+header input {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    position: fixed;
+}
+
+/*change from three lines to X when input is checked*/
+header input:checked ~ .menu-icon .menu-line::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+header input:checked ~ .menu-icon .menu-line::after {
+    transform: rotate(90deg);
+    top: 0;
+}
+header input:checked ~ .menu-icon .menu-line {
+    transform: rotate(135deg);
+    transition: 0.3s;
+}
+
+header input:checked ~ .menu-item {
+    right: 0;
+}
+
+/*for menu icon*/
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    opacity: 1;
+    z-index: 1;
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*icons for searching, social medias*/
+.icons {
+    list-style: none;
+    font-size: 2.5rem;
+    color: white;
+    display: flex;
+    margin-left: 5rem;
+    z-index: 1;
+    left: 12px;
+    top: 2px;
+    position: fixed;
+}
+.icon a {
+    color: white;
+}
+.icon {
+    cursor: pointer;
+}
+.icon:not(:last-child) {
+    margin-right: 5rem;
+}
+/*create three lines for menu line*/
+/*line middle*/
+.menu-line {
+    height: 4px;
+    width: 100%;
+    background: yellow;
+    position: relative;
+}
+/*line top*/
+.menu-line::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background: yellow;
+    top: -14px;
+}
+/*line bottom*/
+.menu-line::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background: yellow;
+    top: 14px;
+}
+
+.menu-item {
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    right: -100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    transition: 0.5s;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu-item li {
+    line-height: 60px;   
+}
+/*menu link*/
+.menu-link {
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.6rem;
+    transition: color 0.5s;
+}
+.menu-link:hover {
+    color: #c59d5f;
+}
+
+.header-text {
+    position: absolute;
+}
+
+.header-text h1 {
+    font-size: 80px;
+    color: white;
+    margin-bottom: 20px;
+    font-family: "Cormorant Garamond";
+}
+
+.header-text h2 {
+    font-size: 30px;
+    margin-bottom: 80px;
+    color: yellow;
+    opacity: 0.7;
+}
+/*For Reservation icon*/
+.header-text a {
+    padding: 15px 40px;
+    background: yellowgreen;
+    color: black;
+    border-radius: 50px;
+    font-size: 25px;
+    opacity: 0.5;
+    animation: headerAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+}
+
+@keyframes headerAnimation {
+    0% {
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.4;
+    }
+}
+
+.header-text a:hover {
+    background: transparent;
+    color: yellowgreen;
+    border: 2px solid yellow;
+}
+/*icon go to top*/
+.go-top {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    background: white;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: black;
+    border-radius: 50%;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/*Offer*/
+.offers {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10rem;
+}
+
+.offers h3 {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size:  4rem;
+    font-family: "Cormorant Garamond";
+    padding-top: 5rem;
+}
+
+.section-subtitle{
+    margin-top: -3rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    color: #afafaf;
+    font-weight: 300;
+    position: relative;
+}
+.three-columns-grid img {
+    width: 80%;
+    border-radius: 40%;
+}
+.three-columns-grid{
+    padding-left: 5rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "Cormorant Garamond";
+}
+
+.paragraph {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #afafaf;
+}
+
+/*About Us*/
+.two-columns-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.top-light, .top-ingredient {
+    text-align: center;
+}
+
+.welcome, .about-paragraph, .read-more {
+    display: flex;
+    flex-direction:  column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.welcome {
+    font-weight: 100;
+}
+
+.about-paragraph {
+    font-size: 1.5rem;
+    color: #afafaf;
+    line-height: 1.5;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    z-index: 1;
+    margin-left: 4rem;
+}
+.about-us h3 {
+    margin-top: 3rem;
+}
+.information li{
+    display: block;
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 1rem;
+    z-index: 1;
+    margin-left: 4rem;
+    color: gray
+}
+
+.btn:hover {
+    color: #c59d5f;
+}
+
+.third-grid {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+}
+/*map*/
+#map {
+    height: 400px;
+        /* The height is 400 pixels */
+    width: 100%;
+        /* The width is the width of the web page */
+}
+/*menu*/
+
+.menu {
+    height : 100vh;
+}
+
+.menu-header {
+    height: 50vh;
+    width: 100%;
+    background: url(img/o.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.menu-card {
+    background-color: white;
+    width : 80%;
+    margin : -30rem auto;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding-bottom: 5rem;
+    
+}
+
+.menu-card-header {
+    text-align: center;
+}
+
+.pho {
+    margin-top: 5rem;
+}
+
+.menu-title {
+    color: #333;
+    margin-top: -4rem;
+    margin-bottom: 1rem;
+}
+
+.appetizers h2, .pho-noodles h2, .entrees h2, .lunch-specials h2, .sandwiches h2, .rice-plates h2, .vermicellies h2 {
+    color: #ff7417;
+    text-align: center;
+    font-family: "Cormorant Garamond";
+    font-size: 3rem;
+    margin-top: 5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+.lunch-specials h4, .lunch-specials h5 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style:italic;
+    
+}
+.appetizer-header, .pho-header, .entree-header, .lunch-special-header, .sandwich-header, .rice-plate-header, .vermicelli-header {
+    /*dislpay: flex;*/
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px dashed #afafaf;
+    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.appetizer-header h3, .pho-noodle h3, .entree h3, .lunch-special h3, .sandwich h3, .rice-plate h3, .vermicelli h3 {
+     font-size: 2rem;
+     font-weight: 300;  
+ }
+.appetizer-header h4, .pho-noodle h4, .entree h4, .lunch-special h4, .sandwich h4, .rice-plate h4, .vermicelli h4{
+     font-size: 1.3rem;
+ }
+.menu-paragraph {
+    text-align: center;
+    color: #afafaf;
+    margin: 2rem;
+    font-size: 1.5rem;
+    
+}
+
+.rice-plates h5, .vermicellies h5 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Customer */
+
+
+.carousel div {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.carousel img {
+    margin: 0 auto;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    color: #bc9321 !important;
+    font-size: 3rem;
+}
+
+.slick-prev {
+    margin-left: 10rem;
+}
+
+.slick-next {
+    margin-right: 10rem;
+}
+
+.customers {
+    padding-bottom: 20rem;
+}
+
+.customers h3 {
+    margin-bottom: 3rem;
+}
+
+.glide, .name {
+    text-align: center;
+}
+
+.glide__arrow {
+    color: #000;
+}
+
+.review-paragraph {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #afafaf;
+    margin: 0 auto;
+    margin-top: 3rem;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    height: 20vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    color: #afafaf;
+    font-size: 2rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .paragraph {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .tart {
+        max-height: 500px;
+        object-fit: contain;
+    }
+
+    .nav-list {
+        width: 80%;
+    }
+
+    .four-columns-grid {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    .three-columns-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .two-columns-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .customers {
+        padding-top: 25rem;
+    }
+
+    .footer {
+        margin-top: 30rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .customers {
+        padding-top: 30rem;
+    }
+
+    .slick-prev::before,
+    .slick-next::before {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .premium {
+        width: 200px;
+    }
+
+    .title {
+        font-size: 6rem;
+    }
+
+    .go-top {
+        right: 2rem;
+        bottom: 2rem;
+    }
+
+    .paragraph {
+        margin-bottom: 3rem;
+        margin-top: -3rem;
+    }
+
+    .four-columns-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .carousel div {
+        width: 350px;
+    }
+
+    .customers {
+        padding-top: 45rem;
+    }
+
+    .book-card {
+        width: 100%;
+    }
+
+    .book-title {
+        font-size: 2rem;
+    }
+
+    .book-card .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .three-columns-grid {
+        grid-gap: 0;
+    }
+}

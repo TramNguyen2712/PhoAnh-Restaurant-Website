@@ -1,0 +1,54 @@
+.section-title {
+    text-align: center;
+    font-size:  4rem;
+    font-family: "Cormorant Garamond";
+    padding-top: 5rem;
+}
+
+.section-subtitle{
+    margin-top: -3rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    color: #afafaf;
+    font-weight: 300;
+    position: relative;
+}
+
+/* Order */
+.order {
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("o\ \(1\).jpg") no-repeat center;
+    background-size: cover;
+}
+
+.order-card {
+    width: 80%;
+    background-color: #fff;
+    margin: 6rem auto;
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    padding-bottom: 5rem;
+}
+
+.order-card h3 {
+    margin-bottom: 5rem;
+}
+
+.website {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.website-title {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+a:hover {
+    color: black;
+    cursor: pointer;
+}
